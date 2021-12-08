@@ -39,7 +39,9 @@ jawab :
 Contoh dari built-in module adalah http,fs,url,querystring. contoh dari external module adalah moment, nodemon. contoh custom module adalah membuat fungsi sendiri seperti :
 
 exports.skilvul = function () {
+
     return "Hello Terra!";
+    
 };
 
-yang kemudian di export dan digunakan pada index.js dengan melakukan import
+lalu di export dengan melakukan import pada induk file
