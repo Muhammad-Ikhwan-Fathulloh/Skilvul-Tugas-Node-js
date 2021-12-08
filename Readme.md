@@ -12,7 +12,9 @@ jawab :
 Engine V8 milik Google adalah sebuah compiler JavaScript yang dibuat menggunakan bahasa pemrograman C++. Dengan komponen ini, input berupa kode JavaScript dapat di-compile menjadi kode dalam tingkat assembly. V8 sendiri terdiri dari tiga komponen:
 
 Compiler — mengubah JavaScript menjadi bahasa pemrograman lain
+
 Optimizer — menciptakan sebuah abstract syntax tree yang akan diubah menjadi static single assignment dan dioptimasi
+
 Garbage collector — V8 membagi penyimpanan yang ada menjadi dua, yaitu penyimpanan lama dan baru. Keduanya  menyimpan objek JavaScript, tetapi penyimpanan baru juga merupakan tempat menaruh output dari compiler. Ketika penyimpanan baru sudah penuh, garbage collector memindahkan objek-objek lama ke penyimpanan lama agar kinerja Node.js tetap ringan
 
 - Libuv library
@@ -22,6 +24,7 @@ Library C++ ini bertugas mengelola operasi asynchronous I/O (input/output) di No
 Ada dua jenis design pattern yang digunakan oleh Node.js, yaitu object pool dan facade. Berikut penjelasannya:
 
 Object pool — design pattern berisi kumpulan objek yang dapat digunakan untuk task tertentu
+
 Facade — design pattern yang memberikan tampilan antarmuka untuk body kode
 
 3. Apa perbedaan antara Built-in Module, External Module, dan Custom Module pada Node.js?
