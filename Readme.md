@@ -1,4 +1,4 @@
-1. Mohon jelaskan apa itu Node.js? Apa perbedaanya dengan Javascript 
+1. Mohon jelaskan apa itu Node.js? Apa perbedaannya dengan Javascript 
 jawab : 
 
 Node js adalah runtime untuk environment javascript yang bersifat open-source dan close-platform. 
