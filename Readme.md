@@ -8,13 +8,21 @@ Perbedaannya dengan javascript biasa bahasa pemograman yang dipakai oleh Nodejs 
 2. Mohon jelaskan arsitektur dari Node.js?
 jawab : 
 
-Arsitektur pada node js yaitu single thread dimana javascript menggunakan konsep single thread, yang berarti hanya memiliki satu tumpukan panggilan yang digunakan untuk menjalankan program. 
+- Engine V8
+Engine V8 milik Google adalah sebuah compiler JavaScript yang dibuat menggunakan bahasa pemrograman C++. Dengan komponen ini, input berupa kode JavaScript dapat di-compile menjadi kode dalam tingkat assembly. V8 sendiri terdiri dari tiga komponen:
 
-Javascript menggunakan call stack untuk melakukan manajemen single thread. ketika terdapat perintah baru maka akan ditambahkan (push) dan akan dikeluarkan ketika perintahnya selesai(pop). 
+Compiler — mengubah JavaScript menjadi bahasa pemrograman lain
+Optimizer — menciptakan sebuah abstract syntax tree yang akan diubah menjadi static single assignment dan dioptimasi
+Garbage collector — V8 membagi penyimpanan yang ada menjadi dua, yaitu penyimpanan lama dan baru. Keduanya  menyimpan objek JavaScript, tetapi penyimpanan baru juga merupakan tempat menaruh output dari compiler. Ketika penyimpanan baru sudah penuh, garbage collector memindahkan objek-objek lama ke penyimpanan lama agar kinerja Node.js tetap ringan
 
-Even Loop, akan memfasilitasi kondisi dimana dengan menggunakan konsep arsitektur javascript, walaupun menggunakan single thread tetapi kita dapat melihat javascript seperti memakai multi thread. terdapat event queue yang berguna sebagai penampung ketika terdapat perintah baru yang akan dieksekussi. Event loop akan memeriksa terus menerus ketika antrian kosong di call stack maka akan menambah antrian baru dari event queque sampai semua perintah selesai dieksekusi.
+- Libuv library
+Library C++ ini bertugas mengelola operasi asynchronous I/O (input/output) di Node.js dan main event loop. Di dalamnya juga terdapat thread pool reserve yang menangani thread setiap operasi I/O.
 
-Server side scriptring, Sejatinya javascript merupakan bahasa pemrograman yang digunakan di front end side. Sehingga kita hanya bisa mengerjakan javascript dengan menggunakan browser untuk menampilkan hasil eksekusinya.Tetapi dengan menggunakan NodeJS kita dapat menjalankan javascript di server side menggunakan terminal command line menggunakan perintah “node”. 
+- Design pattern
+Ada dua jenis design pattern yang digunakan oleh Node.js, yaitu object pool dan facade. Berikut penjelasannya:
+
+Object pool — design pattern berisi kumpulan objek yang dapat digunakan untuk task tertentu
+Facade — design pattern yang memberikan tampilan antarmuka untuk body kode
 
 3. Apa perbedaan antara Built-in Module, External Module, dan Custom Module pada Node.js?
 jawab : 
